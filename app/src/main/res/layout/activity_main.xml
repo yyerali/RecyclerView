@@ -15,6 +15,38 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonremove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Remove Fragment"
+        app:layout_constraintEnd_toEndOf="@+id/buttonShowFragmentFirst"
+        app:layout_constraintTop_toBottomOf="@+id/buttonShowFragmentFirst" />
+
+    <Button
+        android:id="@+id/buttonShowFragmentFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:text="Show Fragments"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/tvPlaceOfFragment"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rcProducts"
+        app:layout_constraintEnd_toEndOf="@+id/rcProducts"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rcProducts">
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

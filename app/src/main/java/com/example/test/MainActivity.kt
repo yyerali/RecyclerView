@@ -40,6 +40,25 @@ class MainActivity : AppCompatActivity() {
         binding.rcProducts.adapter = adapter
         adapter.submitList(listOfProduct)
 
+        val fragment1 = ExampleFirstFragment()
+        val fragment2 = ExampleSecondFragment()
+        var one = true
+        var two = false
+        binding.buttonShowFragmentFirst.setOnClickListener {
+            if (one){
+                supportFragmentManager.beginTransaction().add(binding.tvPlaceOfFragment.id, fragment1).commit()
+                one = false
+            } else {
+                supportFragmentManager.beginTransaction().replace(binding.tvPlaceOfFragment.id, fragment2).commit()
+                one = true
+            }
+        }
+
+
+        binding.buttonremove.setOnClickListener {
+            supportFragmentManager.beginTransaction().remove(fragment1).commit()
+            supportFragmentManager.beginTransaction().remove(fragment2).commit()
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
